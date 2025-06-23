@@ -1,0 +1,69 @@
+<!-- 
+  @file cadastro.html
+  @description Página de cadastro para novos usuários.
+  @summary Contém o formulário para que novos usuários criem uma conta na plataforma.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Metadados e links de recursos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - FLD Veiculos</title>
+    <!-- Folha de estilos principal e ícone -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="shortcut icon" href="./images/icon-car.png" type="image/x-icon">
+</head>
+
+<!-- A classe 'cadastro' no body pode ser usada para aplicar estilos específicos a esta página -->
+<body class="cadastro">
+    <!-- Conteúdo principal da página de cadastro -->
+    <main class="main-log">
+        <!-- Seção da esquerda, geralmente com uma imagem ou branding -->
+        <section class="left-login">
+            <img src="./images/blue-man.png" alt="Animação de um homem ao lado de um carro">
+        </section>
+        <!-- Seção da direita, contendo o formulário de cadastro -->
+        <section class="right-login">
+            <!-- Logo da empresa -->
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="FLD Veiculos Logo" class="logo-img"></a>
+                <span class="logo-text">Veiculos</span>
+            </div>
+            <!-- Contêiner do formulário -->
+            <div class="login-container">
+                <h2>CRIE SUA CONTA</h2>
+                <!-- Formulário de cadastro -->
+                <form action="#" class="login-form">
+                    <!-- Campo de Nome -->
+                    <div class="input-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" placeholder="Digite seu nome completo" required>
+                    </div>
+                    <!-- Campo de E-mail -->
+                    <div class="input-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                    </div>
+                    <!-- Campo de Senha -->
+                    <div class="input-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" placeholder="Crie uma senha" required>
+                    </div>
+                    <!-- Botão de submissão -->
+                    <button type="submit" class="btn">Cadastrar</button>
+                </form>
+                <!-- Link para a página de login para usuários já cadastrados -->
+                <div class="form-links">
+                    <p>Já tem uma conta? <a href="login.html">Faça login</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Script principal para funcionalidades da página -->
+    <script src="./Js/script.js"></script>
+</body>
+
+</html>

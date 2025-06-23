@@ -1,0 +1,65 @@
+<!-- 
+  @file carros.html
+  @description Página de exibição e filtragem dos carros à venda.
+  @summary Apresenta uma vitrine de veículos que pode ser filtrada por diversos critérios.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Metadados e links de recursos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carros a venda</title>
+    <!-- Folha de estilos principal -->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<!-- A classe 'body-cars' pode ser usada para aplicar estilos específicos a esta página -->
+<body class="body-cars">
+    <!-- Cabeçalho específico da página de carros, com funcionalidades de busca e filtro -->
+    <header class="header-content header-cars">
+        <!-- Logo da empresa -->
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt="FLD Veiculos Logo" class="logo-img"></a>
+            <span class="logo-text">Veiculos</span>
+        </div>
+
+        <!-- Contêiner para os controles de busca e filtro -->
+        <div class="search-filter-container">
+            <!-- Campo de busca textual -->
+            <input type="text" id="busca" placeholder="Buscar carro...">
+            <!-- Controles de filtro do tipo 'select' -->
+            <div class="filter">
+                <select id="filter-color">
+                    <option value="">Cor</option>
+                </select>
+                <select id="filter-type">
+                    <option value="">Tipo</option>
+                </select>
+                <select id="filter-price">
+                    <option value="">Preço</option>
+                </select>
+                <select id="filter-year">
+                    <option value="">Ano</option>
+                </select>
+                <select id="filter-transmission">
+                    <option value="">Transmissão</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Botão para sair (deslogar) -->
+        <div class="back">
+            <a href="login.html">Sair</a>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal onde os cards dos carros serão renderizados dinamicamente pelo JavaScript -->
+    <main id="container-carros"></main>
+    
+    <!-- Script principal para funcionalidades da página -->
+    <script src="./Js/script.js"></script>
+</body>
+
+</html>

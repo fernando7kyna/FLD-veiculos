@@ -1,0 +1,82 @@
+<!-- 
+  @file login.html
+  @description Página de autenticação de usuários.
+  @summary Contém o formulário para que usuários existentes possam acessar suas contas.
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Metadados e links de recursos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - FLD Veiculos</title>
+    <!-- Folha de estilos principal e ícone -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="website icon" type="png" href="./images/icon-car.png">
+</head>
+
+<!-- A classe 'login' no body pode ser usada para aplicar estilos específicos a esta página -->
+<body class="login">
+    <!-- Conteúdo principal da página de login -->
+    <main class="main-log">
+        <!-- Seção da esquerda, geralmente com uma imagem ou branding -->
+        <section class="left-login">
+            <img src="./images/blue-man.png" alt="Animação de um homem ao lado de um carro">
+        </section>
+        <!-- Seção da direita, contendo o formulário de login -->
+        <section class="right-login">
+            <!-- Logo da empresa -->
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="FLD Veiculos Logo" class="logo-img"></a>
+                <span class="logo-text">Veiculos</span>
+            </div>
+            <!-- Contêiner do formulário -->
+            <div class="login-container">
+                <h2>FAÇA SEU LOGIN</h2>
+                <!-- Formulário de autenticação -->
+                <form action="#" class="login-form">
+                    <!-- Campo de E-mail -->
+                    <div class="input-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                    </div>
+                    <!-- Campo de Senha -->
+                    <div class="input-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" placeholder="Digite sua senha" required>
+                    </div>
+                    <!-- Botão de submissão -->
+                    <button type="submit" class="btn">Entrar</button>
+                </form>
+                <!-- Links auxiliares para recuperação de senha e cadastro -->
+                <div class="form-links">
+                    <a href="#">Esqueci minha senha</a>
+                    <p>Ainda não tem cadastro? <a href="cadastro.html">Crie uma conta</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contêiner para links de redes sociais -->
+    <div class="social-container">
+        <a href="https://github.com/fernando7kyna/FLD-veiculos.git" target="_blank" class="social-btn github-btn">
+            <img src="./images/github-mark-white.png" alt="GitHub">
+        </a>
+
+        <a href="https://www.linkedin.com/in/fernando-fullstackdev" target="_blank"
+            class="social-btn linkedin-btn">
+            <img src="./images/linkedin.png" alt="LinkedIn">
+        </a>
+
+        <!-- Link para contato via WhatsApp -->
+        <a href="https://wa.me/5561993700437" target="_blank" class="social-btn whatsapp-icon-btn">
+            <img src="./images/whatts.png" alt="WhatsApp">
+        </a>
+    </div>
+
+    <!-- Script principal para funcionalidades da página -->
+    <script src="./Js/script.js"></script>
+</body>
+
+</html>

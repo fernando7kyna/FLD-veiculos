@@ -1,0 +1,875 @@
+/*
+ * @file Folha de estilos principal para o site FLD Veiculos.
+ * @summary Define a aparência de todo o site, incluindo layout, fontes, cores e animações.
+ * A estrutura é organizada em seções para facilitar a manutenção.
+ */
+
+/* === DEFINIÇÕES GLOBAIS: FONTES E ANIMAÇÕES === */
+
+@font-face {
+    font-family: heading;
+    src: url(../fonts/Heading-Pro-ExtraBold-trial.ttf);
+}
+
+@font-face {
+    font-family: sansation;
+    src: url(../fonts/Sansation_Bold.ttf);
+}
+
+/* Animação de brilho para textos com tema futurista. */
+@keyframes futuristic-glow {
+    0%,
+    100% {
+        color: #ccd6f6;
+        text-shadow: 0 0 7px rgba(0, 240, 255, 0.5);
+    }
+
+    50% {
+        color: #00f0ff;
+        text-shadow: 0 0 10px rgba(0, 240, 255, 0.8);
+    }
+}
+
+@keyframes logo-container-glow {
+    0%, 100% {
+        box-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+        border-color: rgba(0, 240, 255, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 16px rgba(0, 240, 255, 0.8);
+        border-color: rgba(0, 240, 255, 1);
+    }
+}
+
+/* === ESTILOS DE BASE E RESET === */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Customização da barra de rolagem do navegador. */
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: #0a192f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #112240;
+    border-radius: 10px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0a192f;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+/* === CABEÇALHO E NAVEGAÇÃO === */
+
+header {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(10, 25, 47, 0.85);
+    z-index: 99;
+}
+
+/* Estilos do logo e seus elementos. */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    flex-shrink: 0;
+    margin: 10px;
+    border: 3px solid;
+    border-radius: 15px;
+    padding: 8px 15px;
+    animation: logo-container-glow 4s ease-in-out infinite;
+}
+
+.logo-text {
+    font-family: sansation, sans-serif;
+    font-size: 28px;
+    animation: futuristic-glow 4s ease-in-out infinite;
+}
+
+.logo-img {
+    height: 80px;
+    vertical-align: middle;
+    border-radius: 10px;
+}
+
+/* Contêiner principal da navegação. */
+.navigation,
+.nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+    margin-right: 40px;
+}
+
+/* Estilo dos links de navegação. */
+.navigation a,
+.nav a {
+    position: relative;
+    padding-bottom: 5px;
+    font-family: 'Inter', sans-serif;
+    color: #ccd6f6;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-top: 15px;
+    background-color: transparent;
+    border-radius: 0;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.navigation a:hover {
+    color: #00f0ff;
+}
+
+.nav a:hover {
+    color: #00f0ff;
+    background-color: transparent;
+    text-shadow: none;
+}
+
+.nav a.active-link {
+    color: #00f0ff;
+}
+
+/* Efeito de sublinhado animado para os links. */
+.nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #00f0ff;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav a:hover::after, .nav a.active-link::after {
+    width: 100%;
+}
+
+.navigation a:not(#btn a)::after {
+    content: none;
+}
+
+.nav a:not(#btn a)::after {
+    content: none;
+}
+
+.navigation a:not(#btn a):hover::after {
+    width: 100%;
+}
+
+/* Modificador do cabeçalho para o estado de rolagem (scroll). */
+.header-content {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    z-index: 100;
+}
+
+.header-content.scrolled {
+    background-color: rgba(10, 25, 47, 0.85);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+}
+
+.header-content.scrolled .navigation a,
+.header-content.scrolled .nav a {
+    color: #ccd6f6;
+}
+
+/* Botão de ação principal no cabeçalho (Login). */
+#btn {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    width: 80px;
+    height: 40px;
+    margin-top: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border-radius: 10px;
+    border: 2px solid #0d4872;
+    box-shadow: 0 0 10px rgba(13, 72, 114, 0.7), inset 0 0 5px rgba(13, 72, 114, 0.5);
+}
+
+#btn a {
+    color: #00f0ff;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    margin: 0;
+    margin-top: 2px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+#btn:hover {
+    background-color: rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+#btn a:hover {
+    color: #00f0ff;
+}
+
+/* === LAYOUTS DE PÁGINA === */
+
+/* Layout principal das páginas. */
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Layout específico para as páginas de Login e Cadastro. */
+.main-log {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Seção da esquerda (com imagem) nas páginas de Login/Cadastro. */
+.left-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f8ff;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+}
+
+.left-login img {
+    width: 60%;
+    max-width: 400px;
+}
+
+/* Seção da direita (com formulário) nas páginas de Login/Cadastro. */
+.right-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0a192f;
+}
+
+/* Contêiner do formulário de Login/Cadastro. */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+}
+
+.login-container h2 {
+    color: #ccd6f6;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Estilos gerais para os formulários. */
+.login-form .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.login-form label {
+    color: #8892b0;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.login-form input {
+    background-color: #0a192f;
+    border: 1px solid #233554;
+    border-radius: 5px;
+    padding: 15px;
+    color: #ccd6f6;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: #00f0ff;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.login-form .btn {
+    width: 100%;
+    padding: 15px;
+    background-color: transparent;
+    border: 1px solid #00f0ff;
+    color: #00f0ff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.login-form .btn:hover {
+    background-color: rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+.form-links {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+
+.form-links a {
+    color: #00f0ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.form-links a:hover {
+    text-decoration: underline;
+}
+
+.form-links p {
+    color: #8892b0;
+}
+
+.form-links p a {
+    font-weight: bold;
+}
+
+/* Botões de redes sociais. */
+.social-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.social-btn {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    color: #ccd6f6;
+    background-color: #112240;
+    border: 2px solid #233554;
+    transition: all 0.3s ease;
+}
+
+.github-btn,
+.linkedin-btn {
+    background-color: transparent;
+}
+
+.social-btn img {
+    width: 25px;
+    height: 25px;
+    transition: 0.5s;
+}
+
+.social-btn:hover {
+    border-color: #00f0ff;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+    transform: translateY(-3px) scale(1.05);
+    background: transparent;
+}
+
+.social-btn:hover img {
+    transform: scale(1.1);
+}
+
+.whatsapp-icon-btn img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Estilos de reset específicos que parecem ser para uma variação de formulário. */
+.main-form {
+    background: #0a192f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 0px;
+}
+
+.main-reverse,
+.lft-section,
+.rig-section,
+.rig-section img,
+.register-form,
+.register-form h2,
+.register-form label,
+.register-container input,
+.register-form button,
+.register-form p,
+.sub,
+.sub a,
+.sub a:hover,
+.lb-container {
+    all: unset;
+}
+
+/* === SEÇÕES DA PÁGINA PRINCIPAL (HOME) === */
+
+/* Seção de Destaque (Hero Section). */
+#home {
+    position: relative;
+    width: 100%;
+    background-image: url("../images/bmw capa.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 80vh;
+    height: 90vh;
+}
+
+#home h1 {
+    color: #ccd6f6;
+    font-family: 'Inter', sans-serif;
+    font-size: 43px;
+    text-transform: uppercase;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-top: 21vh;
+    padding-left: 6vh;
+}
+
+#home h1 span {
+    color: #00f0ff;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#home p {
+    color: #ccd6f6;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    margin-top: 2vh;
+    margin-left: 6vh;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#home button {
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    border: 1px solid #00f0ff;
+    height: 40px;
+    width: 35vh;
+    border-radius: 5px;
+    position: relative;
+    margin-left: 13vh;
+    margin-top: 19px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#home button a {
+    text-decoration: none;
+    color: #00f0ff;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#home button a::after {
+    content: '→';
+    position: absolute;
+    right: 20px;
+    font-size: 22px;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.3s ease-in-out;
+}
+
+#home button:hover {
+    background-color: rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+    transform: scale(1.05);
+}
+
+#home button:hover a::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Seção Sobre. */
+#about {
+    background-color: #0a192f;
+    min-height: 70vh;
+    padding: 30px;
+}
+
+.about-text h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 26px;
+    color: #ccd6f6;
+    text-align: center;
+}
+
+#about p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #ccd6f6;
+    line-height: 26px;
+    text-align: center;
+    margin-top: 58px;
+    margin-left: 49px;
+    margin-right: 60px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+#about img {
+    width: 70vh;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.container-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 30px;
+    flex-wrap: wrap;
+}
+
+/* Seção de Serviços. */
+#services {
+    background-color: #0a192f;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#services h2 {
+    font-family: 'Inter', sans-serif;
+    color: #ccd6f6;
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.boxes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.box {
+    background-color: #112240;
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+}
+
+.box-icon i {
+    font-size: 50px;
+    color: #00f0ff;
+}
+
+.box h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: #ccd6f6;
+    margin: 0;
+}
+
+.box p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #ccd6f6;
+    margin: 0;
+    line-height: 1.4;
+    max-width: 90%;
+}
+
+/* Seção de Contato. */
+#contact {
+    width: 95%;
+    min-height: 40vh;
+    background-color: #112240;
+    color: #ccd6f6;
+    margin-left: 40px;
+    border-top-left-radius: 90px;
+    border-top-right-radius: 90px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+#contact h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+#contact p {
+    font-size: 18px;
+    margin-bottom: 11px;
+}
+
+#contact ul {
+    list-style: none;
+    padding: 0;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+#contact ul li {
+    margin-bottom: 10px;
+}
+
+/* === PÁGINA DE CARROS (VITRINE) === */
+
+.body-cars {
+    display: block;
+    background-color: #0a192f;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Cabeçalho da página de carros. */
+.header-cars {
+    padding: 15px 30px;
+    align-items: center;
+}
+
+.search-filter-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.back {
+    flex-shrink: 0;
+}
+
+.back a {
+    color: #ccd6f6;
+    font-family: 'Inter', sans-serif;
+    margin-top: 17px;
+    text-decoration: none;
+    transition: ease-in-out .3s;
+}
+
+.back a:hover {
+    color: #00f0ff;
+}
+
+.header-cars input#busca {
+    background-color: #0a192f;
+    border: 1px solid #1f3a61;
+    color: #ccd6f6;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    min-width: 250px;
+}
+
+/* Filtros da página de carros. */
+.filter {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter select {
+    background-color: #0a192f;
+    border: 1px solid #1f3a61;
+    color: #ccd6f6;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Contêiner dos cards de carros. */
+#container-carros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+    margin-top: 130px;
+}
+
+/* Estilo individual de cada card de carro. */
+.carro-card {
+    background-color: #112240;
+    border: 1px solid #1f3a61;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 320px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carro-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 240, 255, 0.2);
+}
+
+.carro-card img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.carro-info {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    padding: 10px 0;
+    color: #ccd6f6;
+}
+
+.carro-info h2 {
+    font-family: 'Inter', sans-serif;
+    color: #00f0ff;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.carro-info p strong {
+    font-size: 19px;
+    margin-left: 12px;
+    margin-bottom: 10px;
+    margin: 0 4px;
+    color: #8892b0;
+}
+
+.carro-info p.detalhes-carro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 6px;
+    text-align: center;
+    padding: 0;
+    font-size: 14px;
+    flex-wrap: wrap;
+}
+
+.carro-info p.detalhes-carro span {
+    margin: 0;
+}
+
+.carro-info p.detalhes-carro .separador {
+    margin: 0 4px;
+    color: rgb(153, 153, 153);
+}
+
+/* Botão de contato no card. */
+.contato {
+    background: transparent;
+    color: #00f0ff;
+    text-align: center;
+    padding: 8px;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: ease-out .5s;
+    border: 1px solid #00f0ff;
+}
+
+.contato:hover {
+    background-color: rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+/* === ANIMAÇÕES DE SCROLL === */
+
+/* Efeito de fade-in para seções ao rolar a página. */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20vh);
+    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+    will-change: opacity, transform;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+}
