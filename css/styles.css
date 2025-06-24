@@ -873,3 +873,543 @@ main {
     opacity: 1;
     transform: none;
 }
+
+/* === MEDIA QUERIES PARA RESPONSIVIDADE === */
+
+/* Tablets e dispositivos médios (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    /* Ajustes do cabeçalho */
+    header {
+        padding: 8px 15px;
+    }
+    
+    .logo {
+        gap: 8px;
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+    
+    .logo-text {
+        font-size: 24px;
+    }
+    
+    .logo-img {
+        height: 60px;
+    }
+    
+    .navigation,
+    .nav {
+        gap: 12px;
+        margin-right: 20px;
+    }
+    
+    .navigation a,
+    .nav a {
+        font-size: 14px;
+        margin-top: 12px;
+    }
+    
+    /* Ajustes da seção home */
+    #home h1 {
+        font-size: 42px;
+        line-height: 1.2;
+    }
+    
+    #home p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    /* Ajustes dos serviços */
+    .boxes-container {
+        gap: 20px;
+        padding: 0 20px;
+    }
+    
+    .box {
+        width: calc(50% - 20px);
+        min-width: 280px;
+    }
+    
+    /* Ajustes da página de carros */
+    .search-filter-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .header-cars input#busca {
+        min-width: 200px;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    #container-carros {
+        gap: 20px;
+        padding: 15px;
+    }
+    
+    .carro-card {
+        width: 280px;
+    }
+}
+
+/* Dispositivos móveis grandes (481px - 767px) */
+@media screen and (max-width: 767px) {
+    /* Ajustes do cabeçalho para mobile */
+    header {
+        padding: 5px 10px;
+        flex-direction: column;
+        height: auto;
+        min-height: 80px;
+    }
+    
+    .logo {
+        margin: 5px;
+        padding: 4px 8px;
+    }
+    
+    .logo-text {
+        font-size: 20px;
+    }
+    
+    .logo-img {
+        height: 50px;
+    }
+    
+    .navigation,
+    .nav {
+        margin-right: 0;
+        margin-top: 5px;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .navigation a,
+    .nav a {
+        font-size: 12px;
+        margin-top: 8px;
+        padding: 4px 8px;
+    }
+    
+    /* Ajustes da seção home */
+    #home {
+        padding: 100px 20px 40px;
+        text-align: center;
+    }
+    
+    #home h1 {
+        font-size: 32px;
+        line-height: 1.3;
+    }
+    
+    #home p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    #home button {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+    
+    /* Ajustes da seção sobre */
+    #about {
+        padding: 40px 20px;
+    }
+    
+    .about-text h2 {
+        font-size: 24px;
+    }
+    
+    #about p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    
+    #about img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+    
+    /* Ajustes dos serviços */
+    #services {
+        padding: 40px 20px;
+    }
+    
+    #services h2 {
+        font-size: 24px;
+    }
+    
+    .boxes-container {
+        gap: 15px;
+        padding: 0 10px;
+    }
+    
+    .box {
+        width: 100%;
+        max-width: 350px;
+        padding: 20px 15px;
+    }
+    
+    .box h3 {
+        font-size: 18px;
+    }
+    
+    .box p {
+        font-size: 14px;
+    }
+    
+    /* Ajustes do contato */
+    #contact {
+        padding: 40px 20px;
+    }
+    
+    #contact h2 {
+        font-size: 24px;
+    }
+    
+    #contact p {
+        font-size: 16px;
+    }
+    
+    #contact ul {
+        font-size: 15px;
+    }
+    
+    /* Ajustes da página de carros */
+    .header-cars {
+        padding: 10px 15px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .search-filter-container {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .back {
+        align-self: flex-start;
+    }
+    
+    .header-cars input#busca {
+        width: 100%;
+        max-width: none;
+    }
+    
+    .filter {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+    }
+    
+    .filter select {
+        flex: 1;
+        min-width: 0;
+    }
+    
+    #container-carros {
+        margin-top: 150px;
+        gap: 15px;
+        padding: 10px;
+    }
+    
+    .carro-card {
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    /* Ajustes dos formulários */
+    .main-log {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .left-login {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .right-login {
+        width: 100%;
+        padding: 30px 20px;
+    }
+    
+    .login-container {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .main-form {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .main-reverse {
+        flex-direction: column-reverse;
+    }
+    
+    /* Ajustes dos botões sociais */
+    .social-container {
+        gap: 15px;
+        margin: 30px 0;
+    }
+    
+    .social-btn {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .social-btn img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* Dispositivos móveis pequenos (320px - 480px) */
+@media screen and (max-width: 480px) {
+    /* Ajustes do cabeçalho para mobile pequeno */
+    header {
+        padding: 3px 8px;
+        min-height: 70px;
+    }
+    
+    .logo {
+        gap: 6px;
+        padding: 3px 6px;
+    }
+    
+    .logo-text {
+        font-size: 18px;
+    }
+    
+    .logo-img {
+        height: 40px;
+    }
+    
+    .navigation,
+    .nav {
+        gap: 6px;
+    }
+    
+    .navigation a,
+    .nav a {
+        font-size: 11px;
+        padding: 3px 6px;
+    }
+    
+    /* Ajustes da seção home */
+    #home {
+        padding: 80px 15px 30px;
+    }
+    
+    #home h1 {
+        font-size: 28px;
+    }
+    
+    #home p {
+        font-size: 13px;
+    }
+    
+    #home button {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+    
+    /* Ajustes da seção sobre */
+    #about {
+        padding: 30px 15px;
+    }
+    
+    .about-text h2 {
+        font-size: 22px;
+    }
+    
+    #about p {
+        font-size: 13px;
+    }
+    
+    /* Ajustes dos serviços */
+    #services {
+        padding: 30px 15px;
+    }
+    
+    #services h2 {
+        font-size: 22px;
+    }
+    
+    .box {
+        padding: 15px 12px;
+    }
+    
+    .box h3 {
+        font-size: 16px;
+    }
+    
+    .box p {
+        font-size: 13px;
+    }
+    
+    /* Ajustes do contato */
+    #contact {
+        padding: 30px 15px;
+    }
+    
+    #contact h2 {
+        font-size: 22px;
+    }
+    
+    #contact p {
+        font-size: 14px;
+    }
+    
+    #contact ul {
+        font-size: 13px;
+    }
+    
+    /* Ajustes da página de carros */
+    .header-cars {
+        padding: 8px 10px;
+    }
+    
+    .filter {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .filter select {
+        width: 100%;
+    }
+    
+    #container-carros {
+        margin-top: 180px;
+        gap: 12px;
+        padding: 8px;
+    }
+    
+    .carro-card {
+        max-width: 280px;
+    }
+    
+    .carro-info h2 {
+        font-size: 16px;
+    }
+    
+    .carro-info p strong {
+        font-size: 17px;
+    }
+    
+    .carro-info p.detalhes-carro {
+        font-size: 12px;
+    }
+    
+    /* Ajustes dos formulários */
+    .right-login {
+        padding: 20px 15px;
+    }
+    
+    .login-container h2 {
+        font-size: 20px;
+    }
+    
+    .login-form input {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .login-form .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    /* Ajustes dos botões sociais */
+    .social-container {
+        gap: 12px;
+    }
+    
+    .social-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .social-btn img {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* Orientação paisagem em dispositivos móveis */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    header {
+        min-height: 60px;
+    }
+    
+    .logo-img {
+        height: 35px;
+    }
+    
+    .logo-text {
+        font-size: 16px;
+    }
+    
+    #home {
+        padding: 70px 20px 20px;
+    }
+    
+    #home h1 {
+        font-size: 24px;
+    }
+    
+    #home p {
+        font-size: 12px;
+    }
+    
+    .left-login {
+        height: 150px;
+    }
+    
+    .right-login {
+        padding: 20px 15px;
+    }
+}
+
+/* Dispositivos com tela muito pequena */
+@media screen and (max-width: 320px) {
+    .logo-text {
+        font-size: 16px;
+    }
+    
+    .logo-img {
+        height: 35px;
+    }
+    
+    .navigation a,
+    .nav a {
+        font-size: 10px;
+        padding: 2px 4px;
+    }
+    
+    #home h1 {
+        font-size: 24px;
+    }
+    
+    #home p {
+        font-size: 12px;
+    }
+    
+    .carro-card {
+        max-width: 260px;
+    }
+    
+    .social-btn {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .social-btn img {
+        width: 20px;
+        height: 20px;
+    }
+}
